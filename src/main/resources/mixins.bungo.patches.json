@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "ca.bungo.mixin.core",
+  "plugin": "ca.bungo.mixin.plugins.CorePlugin",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_17",
+  "server": [],
+  "mixins": [
+    "MixinCraftPlayer"
+  ]
+}

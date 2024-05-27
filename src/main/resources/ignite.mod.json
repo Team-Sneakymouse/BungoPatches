@@ -1,7 +1,7 @@
 {
-  "id": "example",
+  "id": "bungopatches",
   "version": "1.0.0",
   "mixins": [
-    "mixins.example.core.json"
+    "mixins.bungo.patches.json"
   ]
 }
