@@ -1,13 +1,27 @@
 plugins {
-  id("mod.base-conventions")
+  id("java")
+  id("io.papermc.paperweight.userdev") version "1.7.1"
+  id("xyz.jpenilla.run-paper") version "2.2.4"
+}
+
+java {
+  toolchain.languageVersion = JavaLanguageVersion.of(21)
 }
 
 dependencies {
-  remapper("net.fabricmc:tiny-remapper:0.10.1:fat")
+  compileOnly("space.vectrix.ignite:ignite-api:1.0.1")
+  compileOnly("org.spongepowered:mixin:0.8.5")
+  compileOnly("io.github.llamalad7:mixinextras-common:0.3.5")
 
-  compileOnly(libs.ignite)
-  compileOnly(libs.mixin)
-  compileOnly(libs.mixinExtras)
+  paperweight.paperDevBundle("1.20.6-R0.1-SNAPSHOT")
+}
 
-  paperweight.paperDevBundle(libs.versions.paper)
+
+tasks {
+  compileJava {
+    options.release = 21
+  }
+  javadoc {
+    options.encoding = Charsets.UTF_8.name() // We want UTF-8 for everything
+  }
 }
